@@ -405,7 +405,7 @@ function wpt_email_handler_qemail ($qpost, $recipients, $from, $fromname = '', $
         restore_current_blog();
 }
 
-function wpt_email_handler_bcc ($qpost, $recipients, $from, $fromname = '', $blog_id = 0, $forwarder_label = '', $noreply) {
+function wpt_email_handler_bcc ($qpost, $recipients, $from, $fromname = '', $blog_id = 0, $forwarder_label = '', $noreply = '') {
     if (($key = array_search($from, $recipients)) !== false) {
         unset($recipeients[$key]);
     }
