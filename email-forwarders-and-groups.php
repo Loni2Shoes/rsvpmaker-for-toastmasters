@@ -407,7 +407,7 @@ function wpt_email_handler_qemail ($qpost, $recipients, $from, $fromname = '', $
 
 function wpt_email_handler_bcc ($qpost, $recipients, $from, $fromname = '', $blog_id = 0, $forwarder_label = '', $noreply = '') {
     if (($key = array_search($from, $recipients)) !== false) {
-        unset($recipeients[$key]);
+        unset($recipients[$key]);
     }
     if(!empty($qpost['forwarded_from']))
         $qpost['post_content'] .= sprintf("\n<p>Forwarded from %s <a href=\"mailto:%s?subject=Re: %s\">reply to list</a></p>",$qpost['forwarded_from'],$qpost['forwarded_from'],$qpost['post_title']);
